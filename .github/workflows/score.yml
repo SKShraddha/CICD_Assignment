@@ -58,4 +58,4 @@ jobs:
 
       - name: Docker Push
         run:
-          docker push shraddhask/cicd:v1
+          docker push shraddhask/cicd:v2
