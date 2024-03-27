@@ -50,7 +50,11 @@ jobs:
 
       - name: Docker Image
         run:
-          docker build . -t cicd:v1
+          docker build . -t shraddhask/cicd:v2
+
+      - name: Docker Image List
+        run:
+          docker image ls
 
       - name: Docker Push
         run:
