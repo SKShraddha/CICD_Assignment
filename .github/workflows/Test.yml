@@ -2,7 +2,7 @@ name: Pull docker image and test
 
 on :
     workflow_run:
-        workflows: ["Train"]
+        workflows: [Train]
         types:
             - completed
 
