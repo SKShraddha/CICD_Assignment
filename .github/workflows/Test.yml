@@ -5,6 +5,9 @@ on :
         workflows: ["Create docker image and push"]
         types:
             - completed
+        branches:
+          - main
+          - branch_test4
 
 permissions:
   contents: read
