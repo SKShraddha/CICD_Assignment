@@ -2,7 +2,7 @@ name: Pull docker image and test
 
 on :
     workflow_run:
-        workflows: [Create docker image and push]
+        workflows: ["Create docker image and push"]
         types:
             - completed
 
