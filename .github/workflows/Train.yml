@@ -1,4 +1,4 @@
-name: Create docker image and push
+name: Docket push and pull workflow
 
 on :
   pull_request:
