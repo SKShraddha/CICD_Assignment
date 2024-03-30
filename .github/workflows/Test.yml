@@ -1,18 +1,23 @@
 name: Docker Pull and Test
 
 on :
-    workflow_run:
-        workflows: ["Create docker image and push"]
-        types:
-            - completed
+  pull_request:
+    branches: [ "main" ]
+    paths-ignore:
+      - 'data/**'
+      - 'requirements.txt'
+      - 'README.md'
 
 permissions:
   contents: read
 
 jobs:
+    Train:
+      uses: ./.github/workflows/Train.yml
+
     Test:
+        needs: [Train]
         runs-on: ubuntu-latest
-        if: ${{ github.event.workflow_run.conclusion == 'success' }}
         steps:
             - uses: actions/checkout@v3
 

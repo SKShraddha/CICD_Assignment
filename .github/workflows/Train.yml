@@ -1,12 +1,6 @@
 name: Create docker image and push
 
-on :
-  pull_request:
-    branches: [ "main" ]
-    paths-ignore:
-      - 'data/**'
-      - 'requirements.txt'
-      - 'README.md'
+on: [workflow_call]
 
 permissions:
   contents: read
