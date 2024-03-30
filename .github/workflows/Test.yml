@@ -11,8 +11,8 @@ permissions:
 
 jobs:
     Test:
-        if: ${{ github.event.workflow_run.conclusion == 'success' }}
         runs-on: ubuntu-latest
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
         steps:
             - uses: actions/checkout@v3
 
