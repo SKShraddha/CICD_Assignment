@@ -1,4 +1,4 @@
-name: Create docker image and push
+name: Docker push and pull
 
 on :
   pull_request:
@@ -30,3 +30,8 @@ jobs:
       - name: Docker Push
         run:
           docker push ${{ secrets.DOCKER_USERNAME }}/cicd:v1
+
+  Test:
+    needs: [Train]
+    uses: ./.github/workflows/Test.yml
+    secrets: inherit
