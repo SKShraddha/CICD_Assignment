@@ -14,6 +14,7 @@ permissions:
 jobs:
     Train:
       uses: ./.github/workflows/Train.yml
+      secrets: inherit
 
     Test:
         needs: [Train]
