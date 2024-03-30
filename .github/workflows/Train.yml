@@ -1,4 +1,4 @@
-name: Docket push and pull workflow
+name: Docker push and pull
 
 on :
   pull_request:
