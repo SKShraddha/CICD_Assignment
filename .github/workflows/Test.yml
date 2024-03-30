@@ -1,23 +1,12 @@
 name: Docker Pull and Test
 
-on :
-  pull_request:
-    branches: [ "main" ]
-    paths-ignore:
-      - 'data/**'
-      - 'requirements.txt'
-      - 'README.md'
+on: [workflow_call]
 
 permissions:
   contents: read
 
 jobs:
-    Train:
-      uses: ./.github/workflows/Train.yml
-      secrets: inherit
-
     Test:
-        needs: [Train]
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3

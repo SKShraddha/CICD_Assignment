@@ -1,6 +1,12 @@
 name: Create docker image and push
 
-on: [workflow_call]
+on :
+  pull_request:
+    branches: [ "main" ]
+    paths-ignore:
+      - 'data/**'
+      - 'requirements.txt'
+      - 'README.md'
 
 permissions:
   contents: read
@@ -24,3 +30,8 @@ jobs:
       - name: Docker Push
         run:
           docker push ${{ secrets.DOCKER_USERNAME }}/cicd:v1
+
+  Test:
+    needs: [Train]
+    uses: ./.github/workflows/Test.yml
+    secrets: inherit
