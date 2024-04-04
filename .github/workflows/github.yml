@@ -1,4 +1,4 @@
-name: Test github actions
+name: Docker push and pull
 
 on :
   pull_request:
